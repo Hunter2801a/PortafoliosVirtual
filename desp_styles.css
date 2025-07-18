@@ -39,7 +39,7 @@ li {
 
 blockquote {
     font-style: italic;
-    color: #fa7188;
+    color: #e91e63;
     text-align: center;
     max-width: 90%;
     margin: 10px auto 20px;
@@ -50,26 +50,42 @@ blockquote {
 .tech-icons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: scale(1.1);
+}
+
 .tech-icons img {
-    margin: 5px;
     width: 50px;
     height: 50px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-bottom: 8px;
 }
 
-.tech-icons img:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
+.tech-item span {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.2;
 }
 
 /* Botones de redes sociales y en general */
 .project-button, #contacto ul li a {
     padding: 10px 20px;
-    border: 2px solid #ff00bb;
+    border: 2px solid #e91e63;
     font-weight: bold;
     border-radius: 5px;
     background-color: transparent;
@@ -79,7 +95,7 @@ blockquote {
 }
 
 .project-button:hover, #contacto ul li a:hover {
-    background-color: #ff00bb;
+    background-color: #e91e63;
     color: #ffffff;
 }
 
@@ -109,7 +125,7 @@ blockquote {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 15px 10px #ff00c399, 0 0 15px 5px #ffd70066;
+    box-shadow: 0 0 15px 10px #e91e6399, 0 0 15px 5px #ffd70066;
 }
 
 .project-card h3 {
@@ -125,7 +141,7 @@ blockquote {
 
 /* Fondo con imágenes para cada tarjeta */
 .proyecto1 { background-image: url('LosOlivos.png'); }
-.proyecto2 { background-image: url('archivosFondo.png'); }
+.proyecto2 { background-image: url('repo.png'); }
 .proyecto3 { background-image: url('jselectronics.jpg'); }
 
 .proyecto1, .proyecto2, .proyecto3 {
