@@ -18,7 +18,7 @@ h1, h2, h3 {
 /* Enlaces */
 a {
     color: #ffb700;
-    text-decoration: none;
+    text-decoration: underline;
     transition: color 0.3s ease;
 }
 
@@ -39,11 +39,12 @@ li {
 
 blockquote {
     font-style: italic;
-    color: #e91e63;
+    color: #ffffff;
     text-align: center;
     max-width: 90%;
     margin: 10px auto 20px;
     font-size: 1.2em;
+    font-weight: 600;
 }
 
 /* Íconos de tecnología */
@@ -85,12 +86,11 @@ blockquote {
 /* Botones de redes sociales y en general */
 .project-button, #contacto ul li a {
     padding: 10px 20px;
-    border: 2px solid #e91e63;
     font-weight: bold;
     border-radius: 5px;
     background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
+    color: #e9ba1e;
+    text-decoration: underline;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
