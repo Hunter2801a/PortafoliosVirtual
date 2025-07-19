@@ -375,3 +375,31 @@ html, body {
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
+
+/* Footer */
+.footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 2px solid #ffc430;
+}
+
+.footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 10px;
+        margin-top: 30px;
+    }
+    
+    .footer p {
+        font-size: 0.8em;
+    }
+}
