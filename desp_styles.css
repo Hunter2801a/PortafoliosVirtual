@@ -4,18 +4,29 @@ html {
     scroll-behavior: smooth; /* Scroll suave para toda la página */
 }
 
+/* Enlaces */
+a {
+    color: #E38664;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #C1040E;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #ffffff;
-    background-color: #000000d6;
+    background-color: #112D3C;
     padding-top: 80px;
     overflow-x: hidden;
 }
 
 h1, h2, h3 {
-    color: #ffc430;
+    color: #E38664;
     text-align: center; /* Centrar los títulos */
 }
 
@@ -43,7 +54,7 @@ li {
 
 blockquote {
     font-style: italic;
-    color: #ffffff;
+    color: #52727F;
     text-align: center;
     max-width: 90%;
     margin: 10px auto 20px;
@@ -90,16 +101,17 @@ blockquote {
 /* Botones de redes sociales y en general */
 .project-button, #contacto ul li a {
     padding: 10px 20px;
+    border: 2px solid #52727F;
     font-weight: bold;
     border-radius: 5px;
     background-color: transparent;
-    color: #e9ba1e;
-    text-decoration: underline;
+    color: #ffffff;
+    text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-button:hover, #contacto ul li a:hover {
-    background-color: #e91e63;
+    background-color: #52727F;
     color: #ffffff;
 }
 
@@ -129,7 +141,7 @@ blockquote {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 15px 10px #e91e6399, 0 0 15px 5px #ffd70066;
+    box-shadow: 0 0 15px 10px #52727F99, 0 0 15px 5px #E3866466;
 }
 
 .project-card h3 {
@@ -170,7 +182,7 @@ blockquote {
 
 /* Header y navegación */
 header {
-    background-color: #261c1f;
+    background-color: #3F0614;
     padding: 20px;
     position: fixed;
     top: 0;
@@ -202,7 +214,7 @@ header {
 }
 
 .nav-links a {
-    color: #FFD700;
+    color: #E38664;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -212,8 +224,8 @@ header {
 }
 
 .nav-links a:hover {
-    color: #FFB700;
-    background-color: rgba(255, 215, 0, 0.1);
+    color: #C1040E;
+    background-color: rgba(227, 134, 100, 0.1);
     transform: translateY(-2px);
 }
 
@@ -253,7 +265,7 @@ header {
     width: 100%;
     max-width: 250px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px #ffc430;
+    box-shadow: 0 4px 15px #E38664;
 }
 
 /* Estilo para el texto y botón de ver más proyectos */
@@ -268,8 +280,8 @@ header {
 }
 
 .more-projects-button:hover {
-    background-color: #fffb0000;
-    color: #FFD700;
+    background-color: transparent;
+    color: #C1040E;
 }
 
 /* Contacto */
@@ -399,11 +411,11 @@ html, body {
 
 /* Footer */
 .footer {
-    background-color: #1a1a1a;
+    background-color: #3A5363;
     padding: 20px;
     text-align: center;
     margin-top: 40px;
-    border-top: 2px solid #ffc430;
+    border-top: 2px solid #E38664;
 }
 
 .footer p {
