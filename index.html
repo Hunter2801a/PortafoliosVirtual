@@ -3,216 +3,547 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Adrián Jiménez </title>
-    <link rel="stylesheet" href="desp_styles.css"> 
+    <title>Adrián Jiménez - Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* TAILWIND OVERRIDES CON COLORES PERSONALIZADOS */
+        :root {
+            --color-gold: #ffc430;
+            --color-gold-light: #ffb700;
+            --color-rose: #fa7188;
+            --color-dark: #000000;
+            --color-dark-bg: #0a0a0a;
+            --color-card-bg: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Animaciones personalizadas */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse-gold {
+            0%, 100% { color: var(--color-gold); }
+            50% { color: var(--color-gold-light); }
+        }
+
+        .animate-slide-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Estilos para transiciones suaves */
+        .transition-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Efecto glow en hover */
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(250, 113, 136, 0.4), 0 0 15px rgba(255, 196, 48, 0.2);
+        }
+
+        /* Botones con efecto */
+        .btn-primary {
+            border: 2px solid var(--color-rose);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: transparent;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-rose);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Header sticky */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 196, 48, 0.1);
+        }
+
+        /* Tech Icons */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition-smooth;
+        }
+
+        .tech-item:hover {
+            transform: scale(1.15) translateY(-5px);
+        }
+
+        .tech-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+        }
+
+        .tech-item span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            max-width: 70px;
+            line-height: 1.2;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: linear-gradient(135deg, rgba(255, 196, 48, 0.1) 0%, rgba(250, 113, 136, 0.05) 100%);
+            border: 1px solid rgba(255, 196, 48, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transition-smooth;
+        }
+
+        .project-card:hover {
+            border-color: var(--color-rose);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(250, 113, 136, 0.3);
+        }
+
+        /* Scroll margin para anclas */
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-rose) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Línea decorativa */
+        .line-separator {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+            margin: 40px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            border-top: 2px solid var(--color-gold);
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+            }
+
+            .tech-item img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Efecto de entrada para elementos */
+        .stagger-item {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-              <ul class="nav-links">
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#tecnologias">Tecnologías y Herramientas</a></li>
-                <li><a href="#estadisticas">Estadísticas</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contáctame</a></li>
+<body class="bg-black text-white">
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header class="py-4 md:py-6">
+        <nav class="max-w-6xl mx-auto px-4 md:px-8">
+            <ul class="flex justify-center gap-4 md:gap-8 flex-wrap">
+                <li><a href="#inicio" class="text-gold hover:text-gold-light transition-smooth font-semibold">Inicio</a></li>
+                <li><a href="#sobre-mi" class="text-gold hover:text-gold-light transition-smooth font-semibold">Sobre mí</a></li>
+                <li><a href="#tecnologias" class="text-gold hover:text-gold-light transition-smooth font-semibold">Tecnologías</a></li>
+                <li><a href="#proyectos" class="text-gold hover:text-gold-light transition-smooth font-semibold">Proyectos</a></li>
+                <li><a href="#contacto" class="text-gold hover:text-gold-light transition-smooth font-semibold">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenedor de presentación -->
-    <main> <!-- Agregado para mayor semántica -->
-        <section id="presentacion">
-            <div class="info">
-                <div id="inicio">
-                    <h1>Adrián Jiménez M.</h1>
-                     <blockquote>
-                     El destino no está escrito, lo vamos creando con cada paso. ¿Estás yendo hacia donde quieres estar?
-                    </blockquote>
-                </div>
-
-                <div id="sobre-mi">
-                    <h2>🚀 Sobre mí</h2>
-                    <ul>
-                        <li>🌱 22 años; 4 años de experiencia con múltiples lenguajes</li>
-                        <li>✅ estudiante en <strong>Desarrollo y Gestión de Software</strong> </li>
-                        <li>💼 mejorando las <strong>habilidades técnicas</strong> y <strong>habilidades blandas</strong> para ser un profesional completo.</li>
-                        <li>🎯 <strong>Áreas de interés:</strong> Desarrollo Full Stack, diseño, programación, supervisión y mantenimiento de páginas web.</li>
-                        <li>💬 Altamente comunicativo, social y responsable</li>
-                    </ul>
-                </div>
+    <!-- SECCIÓN HERO -->
+    <main class="pt-24 md:pt-32">
+        <section id="inicio" class="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 animate-slide-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: var(--color-gold);">
+                    Adrián Jiménez M.
+                </h1>
+                <blockquote class="text-lg md:text-xl italic mb-8" style="color: var(--color-rose);">
+                    "El destino no está escrito, lo vamos creando con cada paso. ¿Estás yendo hacia donde quieres estar?"
+                </blockquote>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Desarrollador Full Stack con 4 años de experiencia en múltiples lenguajes de programación. Especializado en crear soluciones web modernas, escalables y centradas en el usuario.
+                </p>
+                <a href="#contacto" class="btn-primary">Conectemos</a>
+                <!-- Added download CV button -->
+                <button onclick="descargarCV()" class="btn-primary" style="border-color: var(--color-gold); color: white;">Descargar CV</button>
             </div>
-
-             <!-- Contenedor de imagen -->
-    <div class="image-container">
-        <img src="assets/perfil.jpg" alt="Adrián Jiménez M." />
-    </div>
+            <div class="flex-1 animate-fade-in">
+                <img src="/assets/perfil.jpg" alt="Adrián Jiménez" class="rounded-lg shadow-2xl w-full max-w-xs mx-auto" style="box-shadow: 0 0 30px rgba(255, 196, 48, 0.3);">
+            </div>
         </section>
 
-         <!-- Sección de Proyectos -->
-         <section id="proyectos">
-            <h2>💻 Proyectos y repositorios</h2>
-            <div class="project-container">
-                <!-- Proyecto 1 -->
-                <div class="project-card proyecto1">
-                    <h3>Landing Page</h3>
-                <p>¿Te gustaría un ejemplo de una landing page sencilla y directa?</p>
-                    <a href="https://hunter2801a.github.io/landing-page-losOlivos/" class="project-button" target="_blank">Ver Proyecto</a>
+        <div class="line-separator"></div>
+
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Sobre mí</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="stagger-item">
+                    <div class="bg-gray-900 rounded-lg p-6 hover-glow">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Experiencia</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>✓ 4 años de experiencia con múltiples lenguajes</li>
+                            <li>✓ Estudiante en Desarrollo y Gestión de Software</li>
+                            <li>✓ Full Stack Developer enfocado en Web</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Proyecto 2 -->
-                <div class="project-card proyecto3">
-                    <h3>Proyecto e-commerce</h3>
-                    <p>"JS Electronics"; Empresa de venta de laptops.</p>
-                    <a href="https://proyecto-ds-5.vercel.app/" class="project-button" target="_blank">Ver Proyecto</a>
+                <div class="stagger-item">
+                    <div class="bg-gray-900 rounded-lg p-6 hover-glow">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Habilidades</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>✓ Altamente comunicativo y responsable</li>
+                            <li>✓ Desarrollo de habilidades técnicas y blandas</li>
+                            <li>✓ Diseño UI/UX y programación web</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Proyecto 3 -->
-                <div class="project-card proyecto2">
-                    <h3>Página web en proceso</h3>
-                    <p>Un proyecto de página web en proceso, al alcance de un clic.</p>
-                    <a href="https://github.com/Hunter2801a/TecnoY_Page.git" class="project-button" target="_blank">Ver repositorio</a>
+                <div class="stagger-item">
+                    <div class="bg-gray-900 rounded-lg p-6 hover-glow">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Intereses</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>✓ Desarrollo Full Stack</li>
+                            <li>✓ Diseño web y UX</li>
+                            <li>✓ Supervisión y mantenimiento de apps</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Proyecto 4 -->
-                <div class="project-card proyecto4">
-                    <h3>Proyecto web compartido</h3>
-                    <p>Un proyecto de web E-commerce en el que trabajé en conjunto.</p>
-                    <a href="https://github.com/Hunter2801a/DS7-Final.git" class="project-button" target="_blank">Ver repositorio</a>
+                <div class="stagger-item">
+                    <div class="bg-gray-900 rounded-lg p-6 hover-glow">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">En Aprendizaje</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>✓ Python</li>
+                            <li>✓ Kotlin & Android Studio</li>
+                            <li>✓ Tecnologías modernas de frontend</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!-- Texto adicional para ver más proyectos -->
-<div class="more-projects">
-    <p>¿Quieres ver más proyectos? Te invito a mi perfil de GitHub <a href="https://github.com/Hunter2801a" target="_blank" class="more-projects-button">aquí</a>.</p>
-</div>
-
         </section>
 
-        <br>
+        <div class="line-separator"></div>
 
-        <!-- Sección Tecnologías y Herramientas -->
-        <section id="tecnologias">
-            <h2>🛠️ Tecnologías y Herramientas</h2>
-            <!-- Lenguajes de Programación -->
-            <h3>Lenguajes de Programación</h3>
-            <div class="tech-icons">
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/>
-                    <span>C</span>
+        <!-- SECCIÓN TECNOLOGÍAS -->
+        <section id="tecnologias" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Tecnologías y Herramientas</h2>
+            
+            <div class="space-y-12">
+                <!-- Lenguajes -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Lenguajes de Programación</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                            <span>C</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                            <span>C++</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                            <span>SQL</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/>
-                    <span>C++</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/>
-                    <span>Java</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
-                    <span>JavaScript</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"/>
-                    <span>PHP</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"/>
-                    <span>SQL</span>
-                </div>
-            </div>
-            <!-- Frontend -->
-            <h3>Frontend</h3>
-            <div class="tech-icons">
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/>
-                    <span>HTML5</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/>
-                    <span>CSS3</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
-                    <span>JavaScript</span>
-                </div>
-            </div>
-            <!-- Backend y Bases de Datos -->
-            <h3>Backend y Bases de Datos</h3>
-            <div class="tech-icons">
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"/>
-                    <span>PHP</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/>
-                    <span>MySQL</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache (XAMPP)"/>
-                    <span>Apache</span>
-                </div>
-            </div>
-            <!-- Herramientas de Desarrollo -->
-            <h3>Herramientas de Desarrollo</h3>
-            <div class="tech-icons">
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
-                    <span>Git</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/>
-                    <span>GitHub</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"/>
-                    <span>VS Code</span>
-                </div>
-             </div>
-            <!-- En Aprendizaje -->
-            <h3>🌱 En Aprendizaje</h3>
-            <div class="tech-icons">
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"/>
-                    <span>Kotlin</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio"/>
-                    <span>Android Studio</span>
-                </div>
-                <div class="tech-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"/>
-                    <span>Tailwind CSS</span>
-                </div>
-            </div>
-        </section> 
-        <br>
 
-        <!-- Sección de Estadísticas de GitHub -->
-        <section id="estadisticas">
-            <h2>📈 Estadísticas de GitHub</h2>
-            <p align="center">
-                <img src="https://github-readme-stats.vercel.app/api?username=Hunter2801a&show_icons=true&theme=radical&cache_seconds=1800" alt="GitHub Stats" />
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hunter2801a&layout=compact&theme=radical&cache_seconds=1800" alt="Top Languages" />
-  </p>
+                <!-- Frontend -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Frontend</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue">
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
+                            <span>Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Backend y Bases de Datos</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
+                            <span>Laravel</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache">
+                            <span>Apache</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Herramientas de Desarrollo</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-       
+        <div class="line-separator"></div>
 
-        <!-- Sección de Contacto -->
-        <section id="contacto">
-            <h2>📫 Contáctame</h2>
-            <ul>
-                <li>Correo: <a href="mailto:adrianalbertojimenez@gmail.com">adrianalbertojimenez@gmail.com</a></li>
-                <li>Correo Institucional: <a href="mailto:adrian.jimenez2@utp.ac.pa">adrian.jimenez2@utp.ac.pa</a></li>
-                <li>Instagram: <a href="https://www.instagram.com/jimenez_adrian/">jimenez_adrian</a></li>
-            </ul>
+        <!-- SECCIÓN PROYECTOS -->
+        <section id="proyectos" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Proyectos y Trabajos mas recientes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="project-card stagger-item overflow-hidden h-full">
+                    <img src="assets/PGTLogistics.png" alt="PGTLogistics" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">PGT Logistics</h3>
+                        <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para tí o tu empresa.
+</p>
+                        <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar Pagina web</a>
+                    </div>
+                </div>
+
+                <div class="project-card stagger-item overflow-hidden h-full">
+                    <img src="assets/PulseStudio.png" alt="Pulse Studio" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">Pulse Studio</h3>
+                        <p class="text-gray-400 mb-4">Los inicios de una Consultoria & coorporacion de desarrolladores de Software.</p>
+                        <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar Pagina Web</a>
+                    </div>
+                </div>
+
+                <div class="project-card stagger-item overflow-hidden h-full">
+                    <img src="/assets/jselectronics.jpg" alt="JS Electronics E-commerce" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">JS Electronics</h3>
+                        <p class="text-gray-400 mb-4">Proyecto e-commerce completo para venta de laptops con carrito de compras y catálogo dinámico.</p>
+                        <a href="https://proyecto-ds-5.vercel.app/" target="_blank" class="btn-primary">Ver Proyecto</a>
+                    </div>
+                </div>
+
+                <div class="project-card stagger-item overflow-hidden h-full">
+                    <img src="assets/repo.png" alt="TecnoY Page" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">TecnoY Proyecto Page</h3>
+                        <p class="text-gray-400 mb-4">Página web en proceso con diseño moderno y funcionalidades interactivas en desarrollo.</p>
+                        <a href="https://github.com/Hunter2801a/TecnoY_Page.git" target="_blank" class="btn-primary">Ver Repositorio</a>
+                    </div>
+                </div>
+
+                <div class="project-card stagger-item overflow-hidden h-full">
+                    <img src="assets/CodeCorp.png" alt="DS7 Final E-commerce" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">Digital E-Commerce</h3>
+                        <p class="text-gray-400 mb-4">Proyecto web e-commerce colaborativo donde trabajé en conjunto con otros desarrolladores.</p>
+                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver Repositorio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-400 mb-6">¿Quieres ver más proyectos? Visita mi perfil de GitHub.</p>
+                <a href="https://github.com/Hunter2801a" target="_blank" class="btn-primary">Perfil de GitHub</a>
+            </div>
+        </section>
+
+        <div class="line-separator"></div>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">¿Listo para trabajar? Contáctame y empecemos</h2>
+            <div class="bg-gray-900 rounded-lg p-8 md:p-12 hover-glow max-w-2xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <span style="color: var(--color-gold);" class="font-semibold">Email:</span>
+                        <a href="mailto:adrianalbertojimenez@gmail.com" class="text-gray-300 hover:text-gold transition-smooth">adrianalbertojimenez@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span style="color: var(--color-gold);" class="font-semibold">Email Institucional:</span>
+                        <a href="mailto:adrian.jimenez2@utp.ac.pa" class="text-gray-300 hover:text-gold transition-smooth">adrian.jimenez2@utp.ac.pa</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span style="color: var(--color-gold);" class="font-semibold">Instagram:</span>
+                        <a href="https://www.instagram.com/jimenez_adrian/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">@jimenez_adrian</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span style="color: var(--color-gold);" class="font-semibold">GitHub:</span>
+                        <a href="https://github.com/Hunter2801a" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">Hunter2801a</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span style="color: var(--color-gold);" class="font-semibold">LinkedIn:</span>
+                        <a href="https://www.linkedin.com/in/adrian-jimenez-a6010138a/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">Adrian Jimenez</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2025 Adrián Jiménez. Todos los derechos reservados</p>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="text-gray-400">© 2025 Adrián Jiménez. Todos los derechos reservados</p>
     </footer>
-    </body>
+
+    <script>
+        
+         function descargarCV() {
+        const link = document.createElement('a');
+        link.href = 'assets/CV_AdrianJimenez_2025.pdf'; // ruta correcta con /
+        link.download = 'CV_AdrianJimenez_2025.pdf';    // nombre del archivo al descargar
+        link.click();
+    }
+
+
+        // Smooth scroll enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer para animaciones de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-item, .project-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
