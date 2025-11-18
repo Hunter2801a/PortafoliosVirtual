@@ -1,0 +1,17 @@
+{
+  "name": "cv-y-hoja-de-vida-virtual",
+  "version": "1.0.0",
+  "description": "simples archivos css y html, las imagenes son necesarias para el funcionamiento correcto del index\r actualizacion 18/11/2025:\r - nueva version del portafolios con Tailwind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  }
+}

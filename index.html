@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrián Jiménez - Portafolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Tailwind compilado -->
+    <link rel="stylesheet" href="dist/output.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-black text-white">
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header class="py-4 md:py-6">
+
+    <!-- Fondo de partículas doradas -->
+<canvas id="particles-bg" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
+
+
+    <!-- HEADER -->
+    <header class="relative z-20 py-4 md:py-6">
         <nav class="max-w-6xl mx-auto px-4 md:px-8">
             <ul class="flex justify-center gap-4 md:gap-8 flex-wrap">
                 <li><a href="#inicio" class="text-gold hover:text-gold-light transition-smooth font-semibold">Inicio</a></li>
@@ -22,37 +31,46 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN HERO -->
-    <main class="pt-24 md:pt-32">
+    <!-- HERO -->
+    <main class="relative z-10 pt-24 md:pt-32">
         <section id="inicio" class="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 animate-slide-in">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: var(--color-gold);">
+            
+            <div class="flex-1">
+                <h1 class="scroll-animate opacity-0 text-4xl md:text-6xl font-bold mb-4 text-gold">
                     Adrián Jiménez M.
                 </h1>
-                <blockquote class="text-lg md:text-xl italic mb-8" style="color: var(--color-rose);">
+
+                <blockquote class="scroll-animate opacity-0 text-lg md:text-xl italic mb-8 text-rose">
                     "El destino no está escrito, lo vamos creando con cada paso. ¿Estás yendo hacia donde quieres estar?"
                 </blockquote>
-                <p class="text-gray-300 mb-6 leading-relaxed">
+
+                <p class="scroll-animate opacity-0 text-gray-300 mb-6 leading-relaxed">
                     Desarrollador Full Stack con 4 años de experiencia en múltiples lenguajes de programación. Especializado en crear soluciones web modernas, escalables y centradas en el usuario.
                 </p>
-                <a href="#contacto" class="btn-primary">Conectemos</a>
-                <!-- Added download CV button -->
-                <button onclick="descargarCV()" class="btn-primary" style="border-color: var(--color-gold); color: white;">Descargar CV</button>
+
+                <a href="#contacto" class="scroll-animate opacity-0 btn-primary">Conectemos</a>
+                <button onclick="descargarCV()" class="scroll-animate opacity-0 btn-primary" style="border-color: var(--color-gold);">Descargar CV</button>
             </div>
-            <div class="flex-1 animate-fade-in">
-                <img src="assets/perfil.jpg" alt="Adrián Jiménez" class="rounded-lg shadow-2xl w-full max-w-xs mx-auto" style="box-shadow: 0 0 30px rgba(255, 196, 48, 0.3);">
+
+            <div class="flex-1 scroll-animate opacity-0">
+                <img src="assets/perfil.jpg" alt="Adrián Jiménez"
+                    class="rounded-lg w-full max-w-xs mx-auto shadow-2xl"
+                    style="box-shadow: 0 0 30px rgba(255, 196, 48, 0.3);">
             </div>
         </section>
 
-        <div class="line-separator"></div>
+        <div class="line-separator scroll-animate opacity-0"></div>
 
-        <!-- SECCIÓN SOBRE MÍ -->
-        <section id="sobre-mi" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Sobre mí</h2>
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="scroll-animate opacity-0 max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Sobre mí</h2>
+
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="stagger-item">
+
+                <!-- TARJETA -->
+                <div class="scroll-animate opacity-0">
                     <div class="bg-gray-900 rounded-lg p-6 hover-glow">
-                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Experiencia</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-gold">Experiencia</h3>
                         <ul class="space-y-2 text-gray-300">
                             <li>✓ 4 años de experiencia con múltiples lenguajes</li>
                             <li>✓ Estudiante en Desarrollo y Gestión de Software</li>
@@ -60,19 +78,21 @@
                         </ul>
                     </div>
                 </div>
-                <div class="stagger-item">
+
+                <div class="scroll-animate opacity-0">
                     <div class="bg-gray-900 rounded-lg p-6 hover-glow">
-                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Habilidades</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-gold">Habilidades</h3>
                         <ul class="space-y-2 text-gray-300">
                             <li>✓ Altamente comunicativo y responsable</li>
-                            <li>✓ Desarrollo de habilidades técnicas y blandas</li>
+                            <li>✓ Trabajo en equipo y liderazgo</li>
                             <li>✓ Diseño UI/UX y programación web</li>
                         </ul>
                     </div>
                 </div>
-                <div class="stagger-item">
+
+                <div class="scroll-animate opacity-0">
                     <div class="bg-gray-900 rounded-lg p-6 hover-glow">
-                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">Intereses</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-gold">Intereses</h3>
                         <ul class="space-y-2 text-gray-300">
                             <li>✓ Desarrollo Full Stack</li>
                             <li>✓ Diseño web y UX</li>
@@ -80,9 +100,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="stagger-item">
+
+                <div class="scroll-animate opacity-0">
                     <div class="bg-gray-900 rounded-lg p-6 hover-glow">
-                        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-gold);">En Aprendizaje</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-gold">En Aprendizaje</h3>
                         <ul class="space-y-2 text-gray-300">
                             <li>✓ Python</li>
                             <li>✓ Kotlin & Android Studio</li>
@@ -90,216 +111,341 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <div class="line-separator"></div>
+        <div class="line-separator scroll-animate opacity-0"></div>
 
-        <!-- SECCIÓN TECNOLOGÍAS -->
+        <!-- TECNOLOGÍAS -->
         <section id="tecnologias" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Tecnologías y Herramientas</h2>
-            
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Tecnologías y Herramientas</h2>
+
             <div class="space-y-12">
-                <!-- Lenguajes -->
+
+                <!-- GRUPOS -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Lenguajes de Programación</h3>
+                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Lenguajes de Programación</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
-                            <span>C</span>
+                        <!-- CADA TECH ITEM -->
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><span>C</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
-                            <span>C++</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-                            <span>Java</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                            <span>JavaScript</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                            <span>PHP</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                            <span>Python</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
-                            <span>SQL</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Frontend -->
+                <!-- FRONTEND -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Frontend</h3>
+                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Frontend</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                            <span>HTML5</span>
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><span>HTML5</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                            <span>CSS3</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><span>CSS3</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue">
-                            <span>Vue.js</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"><span>Vue.js</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
-                            <span>Tailwind</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="TW"><span>Tailwind</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend -->
+                <!-- BACKEND -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Backend y Bases de Datos</h3>
+                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Backend y Bases de Datos</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                            <span>PHP</span>
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
-                            <span>Laravel</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                            <span>MySQL</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache">
-                            <span>Apache</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache"><span>Apache</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Herramientas -->
+                <!-- HERRAMIENTAS -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-8 text-center" style="color: var(--color-gold);">Herramientas de Desarrollo</h3>
+                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Herramientas de Desarrollo</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                            <span>Git</span>
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-                            <span>GitHub</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-                            <span>VS Code</span>
+
+                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <div class="line-separator"></div>
+        <div class="line-separator scroll-animate opacity-0"></div>
 
-        <!-- SECCIÓN PROYECTOS -->
+        <!-- PROYECTOS -->
         <section id="proyectos" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Proyectos y Trabajos mas recientes</h2>
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                Proyectos y Trabajos más recientes
+            </h2>
+
             <div class="grid md:grid-cols-2 gap-8">
 
-                <div class="project-card stagger-item overflow-hidden h-full">
+                <!-- PROJECT CARD -->
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/PGTLogistics.png" alt="PGTLogistics" class="w-full h-40 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">PGT Logistics</h3>
-                        <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para tí o tu empresa.
-</p>
-                        <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar Pagina web</a>
+                        <h3 class="text-xl font-bold mb-2 text-gold">PGT Logistics</h3>
+                        <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para ti o tu empresa.</p>
+                        <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar página web</a>
                     </div>
                 </div>
 
-                <div class="project-card stagger-item overflow-hidden h-full">
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/PulseStudio.png" alt="Pulse Studio" class="w-full h-40 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">Pulse Studio</h3>
-                        <p class="text-gray-400 mb-4">Los inicios de una Consultoria & coorporacion de desarrolladores de Software.</p>
-                        <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar Pagina Web</a>
+                        <h3 class="text-xl font-bold mb-2 text-gold">Pulse Studio</h3>
+                        <p class="text-gray-400 mb-4">Consultoría & corporación de desarrolladores en formación.</p>
+                        <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar página web</a>
                     </div>
                 </div>
 
-                <div class="project-card stagger-item overflow-hidden h-full">
-                    <img src="assets/jselectronics.jpg" alt="JS Electronics E-commerce" class="w-full h-40 object-cover">
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                    <img src="assets/jselectronics.jpg" alt="JS Electronics" class="w-full h-40 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">JS Electronics</h3>
-                        <p class="text-gray-400 mb-4">Proyecto e-commerce completo para venta de laptops con carrito de compras y catálogo dinámico.</p>
-                        <a href="https://proyecto-ds-5.vercel.app/" target="_blank" class="btn-primary">Ver Proyecto</a>
+                        <h3 class="text-xl font-bold mb-2 text-gold">JS Electronics</h3>
+                        <p class="text-gray-400 mb-4">E-commerce completo con carrito de compras y catálogo dinámico.</p>
+                        <a href="https://proyecto-ds-5.vercel.app/" target="_blank" class="btn-primary">Ver proyecto</a>
                     </div>
                 </div>
 
-                <div class="project-card stagger-item overflow-hidden h-full">
-                    <img src="assets/repo.png" alt="TecnoY Page" class="w-full h-40 object-cover">
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                    <img src="assets/repo.png" alt="TecnoY" class="w-full h-40 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">TecnoY Proyecto Page</h3>
-                        <p class="text-gray-400 mb-4">Página web en proceso con diseño moderno y funcionalidades interactivas en desarrollo.</p>
-                        <a href="https://github.com/Hunter2801a/TecnoY_Page.git" target="_blank" class="btn-primary">Ver Repositorio</a>
+                        <h3 class="text-xl font-bold mb-2 text-gold">TecnoY Página</h3>
+                        <p class="text-gray-400 mb-4">Página web moderna en progreso con múltiples funcionalidades dinámicas.</p>
+                        <a href="https://github.com/Hunter2801a/TecnoY_Page.git" target="_blank" class="btn-primary">Ver repositorio</a>
                     </div>
                 </div>
 
-                <div class="project-card stagger-item overflow-hidden h-full">
-                    <img src="assets/CodeCorp.png" alt="DS7 Final E-commerce" class="w-full h-40 object-cover">
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                    <img src="assets/CodeCorp.png" alt="CodeCorp" class="w-full h-40 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--color-gold);">Digital E-Commerce</h3>
-                        <p class="text-gray-400 mb-4">Proyecto web e-commerce colaborativo donde trabajé en conjunto con otros desarrolladores.</p>
-                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver Repositorio</a>
+                        <h3 class="text-xl font-bold mb-2 text-gold">Digital E-Commerce</h3>
+                        <p class="text-gray-400 mb-4">Proyecto colaborativo de e-commerce desarrollado junto a un equipo profesional.</p>
+                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver repositorio</a>
                     </div>
                 </div>
+
             </div>
 
-            <div class="mt-12 text-center">
-                <p class="text-gray-400 mb-6">¿Quieres ver más proyectos? Visita mi perfil de GitHub.</p>
+            <div class="mt-12 text-center scroll-animate opacity-0">
+                <p class="text-gray-400 mb-6">¿Quieres ver más proyectos? Visita mi GitHub.</p>
                 <a href="https://github.com/Hunter2801a" target="_blank" class="btn-primary">Perfil de GitHub</a>
             </div>
         </section>
 
-        <div class="line-separator"></div>
+        <div class="line-separator scroll-animate opacity-0"></div>
 
-        <!-- SECCIÓN CONTACTO -->
-        <section id="contacto" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">¿Listo para trabajar? Contáctame y empecemos</h2>
-            <div class="bg-gray-900 rounded-lg p-8 md:p-12 hover-glow max-w-2xl mx-auto">
+        <!-- CONTACTO -->
+        <section id="contacto" class="scroll-animate opacity-0 max-w-6xl mx-auto px-4 md:px-8 py-12">
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">¿Listo para trabajar? Contáctame</h2>
+
+            <div class="bg-gray-900 rounded-lg p-8 md:p-12 hover-glow max-w-2xl mx-auto scroll-animate opacity-0">
+
                 <div class="space-y-6">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                        <span style="color: var(--color-gold);" class="font-semibold">Email:</span>
-                        <a href="mailto:adrianalbertojimenez@gmail.com" class="text-gray-300 hover:text-gold transition-smooth">adrianalbertojimenez@gmail.com</a>
+                        <span class="text-gold font-semibold">Email:</span>
+                        <a href="mailto:adrianalbertojimenez@gmail.com" class="text-gray-300 hover:text-gold transition-smooth">
+                            adrianalbertojimenez@gmail.com
+                        </a>
                     </div>
+
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                        <span style="color: var(--color-gold);" class="font-semibold">Email Institucional:</span>
-                        <a href="mailto:adrian.jimenez2@utp.ac.pa" class="text-gray-300 hover:text-gold transition-smooth">adrian.jimenez2@utp.ac.pa</a>
+                        <span class="text-gold font-semibold">Email Institucional:</span>
+                        <a href="mailto:adrian.jimenez2@utp.ac.pa" class="text-gray-300 hover:text-gold transition-smooth">
+                            adrian.jimenez2@utp.ac.pa
+                        </a>
                     </div>
+
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                        <span style="color: var(--color-gold);" class="font-semibold">Instagram:</span>
-                        <a href="https://www.instagram.com/jimenez_adrian/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">@jimenez_adrian</a>
+                        <span class="text-gold font-semibold">Instagram:</span>
+                        <a href="https://www.instagram.com/jimenez_adrian/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">
+                            @jimenez_adrian
+                        </a>
                     </div>
+
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                        <span style="color: var(--color-gold);" class="font-semibold">GitHub:</span>
-                        <a href="https://github.com/Hunter2801a" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">Hunter2801a</a>
+                        <span class="text-gold font-semibold">GitHub:</span>
+                        <a href="https://github.com/Hunter2801a" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">
+                            Hunter2801a
+                        </a>
                     </div>
+
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                        <span style="color: var(--color-gold);" class="font-semibold">LinkedIn:</span>
-                        <a href="https://www.linkedin.com/in/adrian-jimenez-a6010138a/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">Adrian Jimenez</a>
+                        <span class="text-gold font-semibold">LinkedIn:</span>
+                        <a href="https://www.linkedin.com/in/adrian-jimenez-a6010138a/" target="_blank" class="text-gray-300 hover:text-gold transition-smooth">
+                            Adrian Jimenez
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p class="text-gray-400">© 2025 Adrián Jiménez. Todos los derechos reservados</p>
+    <footer class="scroll-animate opacity-0 text-center py-6 bg-black border-t border-gold relative z-20">
+     <p class="text-gray-400">© 2025 Adrián Jiménez. Todos los derechos reservados</p>
     </footer>
 
-<script src="js/app.js"></script>
+<script>
+const canvas = document.getElementById("particles-bg");
+const ctx = canvas.getContext("2d");
+
+resizeCanvas();
+
+// ----------- PARTICULAS DEL FONDO (que suben) -----------
+let bgParticles = [];
+const backgroundCount = 60;
+
+function createBackgroundParticles() {
+    bgParticles = [];
+    for (let i = 0; i < backgroundCount; i++) {
+        bgParticles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 1,
+            speed: Math.random() * 0.4 + 0.1,
+            alpha: Math.random() * 0.4 + 0.2
+        });
+    }
+}
+
+function drawBackgroundParticles() {
+    bgParticles.forEach(p => {
+        ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.y -= p.speed;
+        if (p.y < -10) {
+            p.y = canvas.height + 10;
+            p.x = Math.random() * canvas.width;
+        }
+    });
+}
+
+
+// ----------- PARTICULAS DEL CURSOR (rastro dorado) -----------
+let cursorParticles = [];
+
+window.addEventListener("mousemove", (event) => {
+    for (let i = 0; i < 4; i++) {
+        cursorParticles.push({
+            x: event.clientX,
+            y: event.clientY,
+            size: Math.random() * 3 + 1,
+            alpha: 1,
+            speedX: (Math.random() - 0.5) * 1.4,
+            speedY: (Math.random() - 0.5) * 1.4
+        });
+    }
+});
+
+function drawCursorParticles() {
+    for (let i = 0; i < cursorParticles.length; i++) {
+        const p = cursorParticles[i];
+
+        ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.alpha -= 0.02;
+
+        if (p.alpha <= 0) {
+            cursorParticles.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+
+// ----------- ANIMACIÓN GLOBAL -----------
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawBackgroundParticles();
+    drawCursorParticles();
+
+    requestAnimationFrame(animate);
+}
+
+createBackgroundParticles();
+animate();
+
+window.addEventListener("resize", () => {
+    resizeCanvas();
+    createBackgroundParticles();
+});
+
+// Resize canvas function
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+</script>
+
+
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
 
 </body>
 </html>

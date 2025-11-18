@@ -18,22 +18,24 @@
             });
         });
 
-        // Intersection Observer para animaciones de scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // Intersection Observer para animaciones de scroll con Tailwind
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px"
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.animation = 'slideInUp 0.6s ease-out';
-                }
-            });
-        }, observerOptions);
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate-slide-in", "opacity-100");
+                    }
+                });
+            }, observerOptions);
 
-        document.querySelectorAll('.stagger-item, .project-card').forEach(el => {
-            observer.observe(el);
-        });
+            // Elementos que se animarán al hacer scroll
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                el.classList.add("opacity-0");
+                observer.observe(el);
+            });
+
     
