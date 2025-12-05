@@ -1,211 +1,187 @@
-📄 Portafolio de Adrián Jiménez
+#  Portafolio de Adrián Jiménez
 
 Este es mi portafolio personal, diseñado para mostrar mi experiencia, habilidades, proyectos y formas de contacto.
-Incluye animaciones modernas, diseño responsivo y una implementación completamente local de Tailwind CSS, garantizando que funcione incluso si servicios externos fallan.
 
-🚀 Tecnologías utilizadas
+Incluye animaciones modernas, diseño responsivo y una implementación completamente local de **Tailwind CSS**, garantizando que funcione incluso si servicios externos fallan.
 
-HTML5
+---
 
-CSS3 + estilos personalizados
+##  Tecnologías utilizadas
 
-Tailwind CSS 4 (compilado local)
+- **HTML5**
+- **CSS3** + estilos personalizados
+- **Tailwind CSS 4** (compilado local)
+- **JavaScript Vanilla**
+- **Canvas API** (animaciones de partículas)
+- **Node.js / npm**
+- **Devicon** (iconos de tecnologías)
 
-JavaScript Vanilla
+---
 
-Canvas API (animaciones de partículas)
+##  Objetivos del proyecto
 
-Node.js / npm
+-  Crear un portafolio moderno y visualmente atractivo
+-  Mantener funcionalidad totalmente offline
+-  Incluir animaciones fluidas y profesionales
+-  Asegurar diseño completamente responsive
+-  Mantener una estática elegante basada en **negro + dorado**
 
-Devicon (iconos de tecnologías)
+---
 
-🎯 Objetivos del proyecto
+##  Historial técnico de mejoras
 
-✔ Crear un portafolio moderno y visualmente atractivo
-✔ Mantener funcionalidad totalmente offline
-✔ Incluir animaciones fluidas y profesionales
-✔ Asegurar diseño completamente responsive
-✔ Mantener una estética elegante basada en negro + dorado
-
-🛠️ Historial técnico de mejoras
-1. Migración total a Tailwind local
+### 1. Migración total a Tailwind local
 
 Se reemplazó el CDN por una instalación real:
 
+```bash
 npm install -D tailwindcss postcss autoprefixer
-
+```
 
 Compilación en tiempo real:
 
+```bash
 tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+```
 
+ El proyecto ahora funciona sin depender de Cloudflare ni servicios externos.
 
-✔ El proyecto ahora funciona sin depender de Cloudflare ni servicios externos.
+---
 
-2. Estructura del proyecto organizada
+### 2. Estructura del proyecto organizada
+
+```
 CV_Portafolio/
- ├─ assets/
- ├─ css/
- │   └─ styles.css
- ├─ dist/
- │   └─ output.css
- ├─ js/
- │   └─ app.js
- ├─ src/
- │   └─ input.css
- ├─ index.html
- ├─ package.json
- ├─ tailwind.config.js
+ assets/
+ css/
+    styles.css
+ dist/
+    output.css
+ js/
+    app.js
+ src/
+    input.css
+ index.html
+ package.json
+ tailwind.config.js
+```
 
-3. Tailwind config personalizado
+---
+
+### 3. Tailwind config personalizado
 
 Incluye:
 
-colores extendidos
+- Colores extendidos
+- Animaciones (`slide-in`, `card-hover`, `fade-in`)
+- Keyframes personalizados
+- Soporte para `scroll-animate`
 
-animaciones (slide-in, card-hover, fade-in)
+---
 
-keyframes personalizados
+### 4. Animaciones de scroll
 
-soporte para scroll-animate
+Se usa `IntersectionObserver` para:
 
-4. Animaciones de scroll
+- Fade-in progresivo
+- Aparecimiento por secciones
+- Animaciones suaves en tarjetas
+- Efectos "stagger" entre elementos
 
-Se usa IntersectionObserver para:
+> Todo desde `app.js`.
 
-fade-in progresivo
+---
 
-aparecimiento por secciones
+### 5. Sistema de partículas
 
-animaciones suaves en tarjetas
+Implementado con **Canvas API**:
 
-efectos “stagger” entre elementos
+####  Partículas de fondo
+- Movimiento vertical
+- Color dorado premium
+- Rendimiento optimizado
 
-Todo desde app.js.
+####  Partículas que siguen al cursor
+- Rastro dinámico
+- Desvanecimiento suave
+- Dispersión leve
+- Centrado en la experiencia del usuario
 
-5. Sistema de partículas
+---
 
-Implementado con Canvas API:
-
-🌌 Partículas de fondo
-
-movimiento vertical
-
-color dorado premium
-
-rendimiento optimizado
-
-✨ Partículas que siguen al cursor
-
-rastro dinámico
-
-desvanecimiento suave
-
-dispersión leve
-
-centrado en la experiencia del usuario
-
-6. Limpieza y refactor del HTML
+### 6. Limpieza y refactor del HTML
 
 Actualización a:
 
-clases Tailwind en todo el diseño
+- Clases Tailwind en todo el diseño
+- Sombras, brillos y gradientes unificados
+- Textos con `gradient-text`
+- Tarjetas con `hover-glow`
+- Secciones más limpias y mejor organizadas
 
-sombras, brillos y gradientes unificados
+---
 
-textos con gradient-text
-
-tarjetas con hover-glow
-
-secciones más limpias y mejor organizadas
-
-7. Responsividad garantizada
+### 7. Responsividad garantizada
 
 Gracias a Tailwind (mobile-first):
 
-perfecto en móviles
+-  Perfecto en móviles
+-  Excelente en tablets
+-  Compatible con monitores ultra-wide
+-  Canvas adaptado automóticamente al viewport
 
-excelente en tablets
+> Tus antiguas media queries personalizadas también siguen funcionando.
 
-compatible con monitores ultra-wide
+---
 
-canvas adaptado automáticamente al viewport
+##  Comportamiento en móviles
 
-Tus antiguas media queries personalizadas también siguen funcionando.
+| Característica | Estado |
+|----------------|--------|
+| Diseño responsive |  |
+| Animaciones suaves |  |
+| Fondo animado activo |  |
+| Rastro del cursor |  (no hay cursor) |
 
-📱 Comportamiento en móviles
+> Se puede activar con `touchmove` si lo deseas.
 
-✔ Diseño responsive
-✔ Animaciones suaves
-✔ Fondo animado activo
-✖ Rastro del cursor no aparece (no hay cursor)
-(Se puede activar con touchmove si lo deseas)
+---
 
-💾 Ventajas de Tailwind local
+##  Ventajas de Tailwind local
 
-Sin caídas si falla Cloudflare
+-  Sin caídas si falla Cloudflare
+-  No depende de internet
+-  GitHub Pages lo sirve sin problemas
+-  Mayor velocidad
+-  Entorno profesional de desarrollo
 
-No depende de internet
+---
 
-GitHub Pages lo sirve sin problemas
+##  Modo desarrollo
 
-Mayor velocidad
+1. **Instalar dependencias:**
 
-Entorno profesional de desarrollo
+   ```bash
+   npm install
+   ```
 
-🧪 Modo desarrollo
+2. **Compilar Tailwind:**
 
-Instalar dependencias:
+   ```bash
+   tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+   ```
 
-npm install
+3. **Abrir `index.html` en el navegador.**
 
+---
 
-Compilar Tailwind:
+##  Autor
 
-tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+**Adrián Jiménez**  
+*Full Stack Web Developer*
 
+-  **GitHub:** [Hunter2801a](https://github.com/Hunter2801a)
+-  **Instagram:** [@jimenez_adrian](https://www.instagram.com/jimenez_adrian/)
+-  **LinkedIn:** [Adrian Jimenez](https://www.linkedin.com/in/adrian-jimenez-a6010138a/)
 
-Abrir index.html en el navegador.
-
-🌐 Despliegue en GitHub Pages
-
-Subir el repo
-
-Settings → Pages
-
-Source: main branch
-
-Folder: /root
-
-Guardar
-
-👨‍💻 Autor
-
-Adrián Jiménez
-Full Stack Web Developer
-
-GitHub: https://github.com/Hunter2801a
-
-Instagram: @jimenez_adrian
-
-LinkedIn: Adrian Jimenez
-
-📌 Nota final
-
-Si deseas agregar:
-
-vistas previas (screenshots)
-
-cambios por versión
-
-un roadmap
-
-badges de tecnologías
-
-una sección “antes vs después”
-
-✨ Te los preparo sin problema.
-
-💡 ¿Sabías que…?
-
-El sistema de partículas que usamos sigue los mismos principios matemáticos que los motores de físicas utilizados en videojuegos AAA, solo que optimizado para la web.
+---
