@@ -1,8 +1,8 @@
 
          function descargarCV() {
         const link = document.createElement('a');
-        link.href = 'assets/CV_AdrianJimenez_2025.pdf'; // ruta correcta con /
-        link.download = 'CV_AdrianJimenez_2025.pdf';    // nombre del archivo al descargar
+        link.href = 'assets/CV_AdrianJimenez_2026.pdf'; // ruta correcta con /
+        link.download = 'CV_AdrianJimenez_2026.pdf';    // nombre del archivo al descargar
         link.click();
     }
 
