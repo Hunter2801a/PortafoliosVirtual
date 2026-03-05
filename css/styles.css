@@ -28,6 +28,24 @@
             box-shadow: 0 0 20px rgba(250, 113, 136, 0.4), 0 0 15px rgba(255, 196, 48, 0.2);
         }
 
+        /* Efecto glow dorado para enlaces de contacto */
+        .contact-link {
+            display: inline-block;
+            padding: 0.5rem 0;
+            position: relative;
+            border-bottom: 2px solid rgba(255, 196, 48, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: var(--color-gold);
+            color: var(--color-gold);
+            text-shadow: 0 0 10px rgba(255, 196, 48, 0.6);
+            box-shadow: 0 0 15px rgba(255, 196, 48, 0.4), 0 0 30px rgba(255, 196, 48, 0.2);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+        }
+
         /* Botones con efecto */
         .btn-primary {
             border: 2px solid var(--color-rose);
