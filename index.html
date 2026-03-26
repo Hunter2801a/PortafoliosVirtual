@@ -240,6 +240,7 @@
                         <h3 class="text-xl font-bold mb-2 text-gold">PGT Logistics</h3>
                         <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para ti o tu empresa.</p>
                         <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar página web</a>
+                        <button onclick="abrirPDF('assets/CartaRecomAJ.pdf')" class="btn-primary">Ver carta de recomendación</button>
                     </div>
                 </div>
 
@@ -249,6 +250,7 @@
                         <h3 class="text-xl font-bold mb-2 text-gold">Pulse Studio</h3>
                         <p class="text-gray-400 mb-4">Consultoría & corporación de desarrolladores en formación.</p>
                         <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar página web</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
                     </div>
                 </div>
 
@@ -258,6 +260,7 @@
                         <h3 class="text-xl font-bold mb-2 text-gold">JS Electronics</h3>
                         <p class="text-gray-400 mb-4">E-commerce completo con carrito de compras y catálogo dinámico.</p>
                         <a href="https://proyecto-ds-5.vercel.app/" target="_blank" class="btn-primary">Ver proyecto</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
                     </div>
                 </div>
 
@@ -267,6 +270,7 @@
                         <h3 class="text-xl font-bold mb-2 text-gold">TecnoY Página</h3>
                         <p class="text-gray-400 mb-4">Página web moderna en progreso con múltiples funcionalidades dinámicas.</p>
                         <a href="https://github.com/Hunter2801a/TecnoY_Page.git" target="_blank" class="btn-primary">Ver repositorio</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
                     </div>
                 </div>
 
@@ -276,6 +280,7 @@
                         <h3 class="text-xl font-bold mb-2 text-gold">Digital E-Commerce</h3>
                         <p class="text-gray-400 mb-4">Proyecto colaborativo de e-commerce desarrollado junto a un equipo profesional.</p>
                         <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver repositorio</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
                     </div>
                 </div>
 
@@ -439,6 +444,14 @@ window.addEventListener("resize", () => {
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+}
+
+// Función para abrir PDF en visualización
+function abrirPDF(rutaPDF) {
+    const ventana = window.open(rutaPDF, '_blank');
+    if (!ventana) {
+        alert('No se pudo abrir el PDF. Por favor, intenta nuevamente.');
+    }
 }
 </script>
 
