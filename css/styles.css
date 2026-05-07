@@ -80,6 +80,63 @@
             border-bottom: 1px solid rgba(255, 196, 48, 0.1);
         }
 
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: 52px;
+            height: 44px;
+            padding: 6px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 196, 48, 0.25);
+            background: rgba(10, 10, 10, 0.6);
+            cursor: pointer;
+        }
+
+        .nav-bar-line {
+            display: block;
+            height: 4px;
+            background-color: var(--color-gold);
+            border-radius: 999px;
+            margin: 4px 0;
+            width: 16px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .nav-bar-line:nth-of-type(2) {
+            width: 28px;
+        }
+
+        .nav-bar-line:nth-of-type(3) {
+            width: 22px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
         /* Tech Icons */
         .tech-grid {
             display: grid;
@@ -97,6 +154,13 @@
 
         .tech-item:hover {
             transform: scale(1.15) translateY(-5px);
+        }
+
+        /* Centro el recuadro de Intereses cuando queda solo */
+        .grid.md\:grid-cols-2 > div:nth-child(3):nth-last-child(1) {
+            grid-column: 1 / -1;
+            width: fit-content;
+            margin: 0 auto;
         }
 
         .tech-item img {
@@ -160,15 +224,49 @@
         /* Responsivo */
         @media (max-width: 768px) {
             header {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 15px;
+                padding: 12px 0;
             }
 
-            nav ul {
-                flex-wrap: wrap;
-                gap: 10px;
+            .nav-bar {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 12px;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                align-self: center;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: min(76vw, 320px);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 80px 20px 24px;
+                background: rgba(10, 10, 10, 0.78);
+                backdrop-filter: blur(12px);
+                border-right: 1px solid rgba(255, 196, 48, 0.15);
+                box-shadow: 10px 0 30px rgba(0, 0, 0, 0.45);
+                transform: translateX(-100%);
+                transition: transform 0.25s ease;
+                pointer-events: none;
+                z-index: 1100;
+            }
+
+            .nav-menu.is-open {
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            body.nav-open {
+                overflow: hidden;
             }
 
             .tech-grid {
@@ -179,5 +277,19 @@
             .tech-item img {
                 width: 40px;
                 height: 40px;
+            }
+
+            #inicio .flex-1 {
+                text-align: center;
+            }
+
+            #inicio .btn-primary {
+                margin: 6px 6px 0;
+            }
+
+            #inicio p {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 30rem;
             }
         }

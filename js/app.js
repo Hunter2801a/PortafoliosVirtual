@@ -18,6 +18,47 @@
             });
         });
 
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle && navMenu) {
+            const closeMenu = () => {
+                navMenu.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('nav-open');
+            };
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                document.body.classList.toggle('nav-open', isOpen);
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!navMenu.classList.contains('is-open')) {
+                    return;
+                }
+
+                if (navMenu.contains(event.target) || navToggle.contains(event.target)) {
+                    return;
+                }
+
+                closeMenu();
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+        }
+
         // Intersection Observer para animaciones de scroll con Tailwind
             const observerOptions = {
                 threshold: 0.2,
