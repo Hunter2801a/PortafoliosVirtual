@@ -137,6 +137,38 @@
             border: 0;
         }
 
+        @media (min-width: 769px) {
+            .nav-menu a {
+                position: relative;
+                padding: 6px 4px;
+                transition: transform 0.2s ease, color 0.2s ease;
+            }
+
+            .nav-menu a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+                opacity: 0;
+                transform: translateY(4px);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+            }
+
+            .nav-menu a:hover {
+                color: var(--color-gold-light);
+                text-shadow: 0 0 12px rgba(255, 196, 48, 0.5);
+                transform: translateY(-2px);
+            }
+
+            .nav-menu a:hover::after {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Tech Icons */
         .tech-grid {
             display: grid;
@@ -244,12 +276,14 @@
                 top: 0;
                 left: 0;
                 height: 100vh;
-                width: min(76vw, 320px);
+                width: min(64vw, 260px);
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 16px;
-                padding: 80px 20px 24px;
+                justify-content: flex-start;
+                gap: 0;
+                margin: 0;
+                padding: 16px 12px 16px;
                 background: rgba(10, 10, 10, 0.78);
                 backdrop-filter: blur(12px);
                 border-right: 1px solid rgba(255, 196, 48, 0.15);
@@ -258,6 +292,32 @@
                 transition: transform 0.25s ease;
                 pointer-events: none;
                 z-index: 1100;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 8px;
+                width: 100%;
+                padding: 12px 6px;
+                border-bottom: 1px solid rgba(255, 196, 48, 0.35);
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none;
+            }
+
+            .nav-icon {
+                width: 8px;
+                height: 8px;
+                border-radius: 999px;
+                background: var(--color-gold);
+                box-shadow: 0 0 6px rgba(255, 196, 48, 0.6);
             }
 
             .nav-menu.is-open {
