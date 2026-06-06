@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
 <body class="bg-black text-white">
 
     <!-- Fondo de partículas doradas -->
-<canvas id="particles-bg" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
+    <canvas id="particles-bg" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
 
 
     <!-- HEADER -->
@@ -30,11 +31,20 @@
                 </button>
 
                 <ul id="site-menu" class="nav-menu">
-                    <li><a href="#inicio" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span class="nav-icon" aria-hidden="true"></span>Inicio</a></li>
-                    <li><a href="#sobre-mi" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span class="nav-icon" aria-hidden="true"></span>Sobre mí</a></li>
-                    <li><a href="#tecnologias" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span class="nav-icon" aria-hidden="true"></span>Tecnologías</a></li>
-                    <li><a href="#proyectos" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span class="nav-icon" aria-hidden="true"></span>Proyectos</a></li>
-                    <li><a href="#contacto" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span class="nav-icon" aria-hidden="true"></span>Contacto</a></li>
+                    <li><a href="#inicio" class="text-gold hover:text-gold-light transition-smooth font-semibold"><span
+                                class="nav-icon" aria-hidden="true"></span>Inicio</a></li>
+                    <li><a href="#sobre-mi"
+                            class="text-gold hover:text-gold-light transition-smooth font-semibold"><span
+                                class="nav-icon" aria-hidden="true"></span>Sobre mí</a></li>
+                    <li><a href="#tecnologias"
+                            class="text-gold hover:text-gold-light transition-smooth font-semibold"><span
+                                class="nav-icon" aria-hidden="true"></span>Tecnologías</a></li>
+                    <li><a href="#proyectos"
+                            class="text-gold hover:text-gold-light transition-smooth font-semibold"><span
+                                class="nav-icon" aria-hidden="true"></span>Proyectos</a></li>
+                    <li><a href="#contacto"
+                            class="text-gold hover:text-gold-light transition-smooth font-semibold"><span
+                                class="nav-icon" aria-hidden="true"></span>Contacto</a></li>
                 </ul>
             </div>
         </nav>
@@ -42,23 +52,27 @@
 
     <!-- HERO -->
     <main class="relative z-10 pt-24 md:pt-32">
-        <section id="inicio" class="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
-            
+        <section id="inicio"
+            class="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
+
             <div class="flex-1">
                 <h1 class="scroll-animate opacity-0 text-4xl md:text-6xl font-bold mb-4 text-gold">
                     Adrián Jiménez M.
                 </h1>
 
                 <blockquote class="scroll-animate opacity-0 text-lg md:text-xl italic mb-8 text-rose">
-                    "El destino no está escrito, lo vamos creando con cada paso. ¿Estás yendo hacia donde quieres estar?"
+                    "El destino no está escrito, lo vamos creando con cada paso. ¿Estás yendo hacia donde quieres
+                    estar?"
                 </blockquote>
 
                 <p class="scroll-animate opacity-0 text-gray-300 mb-6 leading-relaxed">
-                    Desarrollador Full Stack con 4 años de experiencia en múltiples lenguajes de programación. Especializado en crear soluciones web modernas, escalables y centradas en el usuario.
+                    Desarrollador Full Stack con 4 años de experiencia en múltiples lenguajes de programación.
+                    Especializado en crear soluciones web modernas, escalables y centradas en el usuario.
                 </p>
 
                 <a href="#contacto" class="scroll-animate opacity-0 btn-primary">Conectemos</a>
-                <button onclick="descargarCV()" class="scroll-animate opacity-0 btn-primary" style="border-color: var(--color-gold);">Descargar CV</button>
+                <button onclick="descargarCV()" class="scroll-animate opacity-0 btn-primary"
+                    style="border-color: var(--color-gold);">Descargar CV</button>
             </div>
 
             <div class="flex-1 scroll-animate opacity-0">
@@ -72,7 +86,8 @@
 
         <!-- SOBRE MÍ -->
         <section id="sobre-mi" class="scroll-animate opacity-0 max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Sobre mí</h2>
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Sobre mí
+            </h2>
 
             <div class="grid md:grid-cols-2 gap-8">
 
@@ -128,7 +143,8 @@
 
         <!-- TECNOLOGÍAS -->
         <section id="tecnologias" class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Tecnologías y Herramientas</h2>
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                Tecnologías y Herramientas</h2>
 
             <div class="space-y-12">
 
@@ -137,32 +153,46 @@
                     <h3 class="text-xl font-semibold mb-8 text-center text-gold">Lenguajes de Programación</h3>
                     <div class="tech-grid">
                         <!-- CADA TECH ITEM -->
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><span>C</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                                alt="C"><span>C</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                alt="C++"><span>C++</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                alt="Java"><span>Java</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JS"><span>JavaScript</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                                alt="PHP"><span>PHP</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python"><span>Python</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="SQL"><span>SQL</span>
                         </div>
                     </div>
                 </div>
@@ -171,20 +201,28 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-8 text-center text-gold">Frontend</h3>
                     <div class="tech-grid">
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><span>HTML5</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML5"><span>HTML5</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><span>CSS3</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS3"><span>CSS3</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"><span>Vue.js</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                                alt="Vue"><span>Vue.js</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="TW"><span>Tailwind</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                                alt="TW"><span>Tailwind</span>
                         </div>
                     </div>
                 </div>
@@ -193,42 +231,65 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-8 text-center text-gold">Backend y Bases de Datos</h3>
                     <div class="tech-grid">
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                                alt="PHP"><span>PHP</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                                alt="Laravel"><span>Laravel</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="MySQL"><span>MySQL</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache"><span>Apache</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+                                alt="Apache"><span>Apache</span>
+                        </div>
+
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+                                alt="Supabase"><span>Supabase</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- HERRAMIENTAS -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Herramientas de Desarrollo y Controladores</h3>
+                    <h3 class="text-xl font-semibold mb-8 text-center text-gold">Herramientas de Desarrollo y
+                        Controladores</h3>
                     <div class="tech-grid">
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                alt="Git"><span>Git</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: invert(1);"><span>GitHub</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" style="filter: invert(1);"><span>GitHub</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                alt="VS Code"><span>VS Code</span>
                         </div>
 
-                        <div class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://antigravity.google/assets/image/brand/antigravity-icon__full-color.png" alt="Antigravity"><span>Antigravity</span>
+                        <div
+                            class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://antigravity.google/assets/image/brand/antigravity-icon__full-color.png"
+                                alt="Antigravity"><span>Antigravity</span>
                         </div>
                     </div>
                 </div>
@@ -246,56 +307,72 @@
 
             <div class="grid md:grid-cols-2 gap-8">
 
-                <!-- PROJECT CARD -->
+                <!-- Stash IMS -->
+                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                    <img src="assets/Stash.png" alt="Stash IMS" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">Stash IMS</h3>
+                        <p class="text-gray-400 mb-4">Inventario inteligente para PyMEs en Panamá. Controla tu
+                            inventario en tiempo real con StashIMS.</p>
+                        <a href="https://hunter2801a.github.io/StashIMS-Landing/" target="_blank"
+                            class="btn-primary">Visitar página web</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                            recomendación</button>
+                    </div>
+                </div>
+
+                <!-- PGT Logistics -->
                 <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/PGTLogistics.png" alt="PGTLogistics" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">PGT Logistics</h3>
-                        <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para ti o tu empresa.</p>
-                        <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar página web</a>
-                        <button onclick="abrirPDF('assets/CartaRecomAJ.pdf')" class="btn-primary">Ver carta de recomendación</button>
+                        <p class="text-gray-400 mb-4">Tenemos los mejores servicios de transporte de mercancía para ti o
+                            tu empresa.</p>
+                        <a href="https://www.pgtlogistics.com/" target="_blank" class="btn-primary">Visitar página
+                            web</a>
+                        <button onclick="abrirPDF('assets/CartaRecomAJ.pdf')" class="btn-primary">Ver carta de
+                            recomendación</button>
                     </div>
                 </div>
 
+                <!-- Warelogic Solutions -->
                 <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/warelogics.png" alt="Warelogic Solutions" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Warelogic Solutions</h3>
-                        <p class="text-gray-400 mb-4"> Asesoría cercana y soluciones prácticas para optimizar logística y almacenes.</p>
-                        <a href="https://warelogicsolutions.com/" target="_blank" class="btn-primary">Visitar página web</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
+                        <p class="text-gray-400 mb-4"> Asesoría cercana y soluciones prácticas para optimizar logística
+                            y almacenes.</p>
+                        <a href="https://warelogicsolutions.com/" target="_blank" class="btn-primary">Visitar página
+                            web</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                            recomendación</button>
                     </div>
                 </div>
 
-
+                <!-- Pulse Studio -->
                 <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/PulseStudio.png" alt="Pulse Studio" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Pulse Studio</h3>
                         <p class="text-gray-400 mb-4">Consultoría & corporación de desarrolladores en formación.</p>
-                        <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar página web</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
+                        <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar página
+                            web</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                            recomendación</button>
                     </div>
                 </div>
 
-                
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
-                    <img src="assets/repo.png" alt="TecnoY" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gold">TecnoY Página</h3>
-                        <p class="text-gray-400 mb-4">Página web moderna en progreso con múltiples funcionalidades dinámicas.</p>
-                        <a href="https://github.com/Hunter2801a/TecnoY_Page.git" target="_blank" class="btn-primary">Ver repositorio</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
-                    </div>
-                </div>
-
+                <!-- Digital E-Commerce -->
                 <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
                     <img src="assets/CodeCorp.png" alt="CodeCorp" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Digital E-Commerce</h3>
-                        <p class="text-gray-400 mb-4">Proyecto colaborativo de e-commerce desarrollado junto a un equipo profesional.</p>
-                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver repositorio</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de recomendación</button>
+                        <p class="text-gray-400 mb-4">Proyecto colaborativo de e-commerce desarrollado junto a un equipo
+                            profesional.</p>
+                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver
+                            repositorio</a>
+                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                            recomendación</button>
                     </div>
                 </div>
 
@@ -311,7 +388,8 @@
 
         <!-- CONTACTO -->
         <section id="contacto" class="scroll-animate opacity-0 max-w-6xl mx-auto px-4 md:px-8 py-12">
-            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">¿Listo para trabajar? Contáctame</h2>
+            <h2 class="scroll-animate opacity-0 text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">¿Listo
+                para trabajar? Contáctame</h2>
 
             <div class="bg-gray-900 rounded-lg p-8 md:p-12 hover-glow max-w-2xl mx-auto scroll-animate opacity-0">
 
@@ -332,7 +410,8 @@
 
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                         <span class="text-gold font-semibold">Instagram:</span>
-                        <a href="https://www.instagram.com/jimenez_adrian/" target="_blank" class="text-gray-300 contact-link">
+                        <a href="https://www.instagram.com/jimenez_adrian/" target="_blank"
+                            class="text-gray-300 contact-link">
                             @jimenez_adrian
                         </a>
                     </div>
@@ -346,7 +425,8 @@
 
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                         <span class="text-gold font-semibold">LinkedIn:</span>
-                        <a href="https://www.linkedin.com/in/adrian-jimenez-a6010138a/" target="_blank" class="text-gray-300 contact-link">
+                        <a href="https://www.linkedin.com/in/adrian-jimenez-a6010138a/" target="_blank"
+                            class="text-gray-300 contact-link">
                             Adrian Jimenez
                         </a>
                     </div>
@@ -358,117 +438,117 @@
 
     <!-- FOOTER -->
     <footer class="scroll-animate opacity-0 text-center py-6 bg-black border-t border-gold relative z-20">
-     <p class="text-gray-400">© 2026 Adrián Jiménez. Todos los derechos reservados... o algo así</p>
+        <p class="text-gray-400">© 2026 Adrián Jiménez. Todos los derechos reservados... o algo así</p>
     </footer>
 
-<script>
-const canvas = document.getElementById("particles-bg");
-const ctx = canvas.getContext("2d");
+    <script>
+        const canvas = document.getElementById("particles-bg");
+        const ctx = canvas.getContext("2d");
 
-resizeCanvas();
+        resizeCanvas();
 
-// ----------- PARTICULAS DEL FONDO (que suben) -----------
-let bgParticles = [];
-const backgroundCount = 60;
+        // ----------- PARTICULAS DEL FONDO (que suben) -----------
+        let bgParticles = [];
+        const backgroundCount = 60;
 
-function createBackgroundParticles() {
-    bgParticles = [];
-    for (let i = 0; i < backgroundCount; i++) {
-        bgParticles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 2 + 1,
-            speed: Math.random() * 0.4 + 0.1,
-            alpha: Math.random() * 0.4 + 0.2
-        });
-    }
-}
-
-function drawBackgroundParticles() {
-    bgParticles.forEach(p => {
-        ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        p.y -= p.speed;
-        if (p.y < -10) {
-            p.y = canvas.height + 10;
-            p.x = Math.random() * canvas.width;
+        function createBackgroundParticles() {
+            bgParticles = [];
+            for (let i = 0; i < backgroundCount; i++) {
+                bgParticles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speed: Math.random() * 0.4 + 0.1,
+                    alpha: Math.random() * 0.4 + 0.2
+                });
+            }
         }
-    });
-}
 
+        function drawBackgroundParticles() {
+            bgParticles.forEach(p => {
+                ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
 
-// ----------- PARTICULAS DEL CURSOR (rastro dorado) -----------
-let cursorParticles = [];
-
-window.addEventListener("mousemove", (event) => {
-    for (let i = 0; i < 4; i++) {
-        cursorParticles.push({
-            x: event.clientX,
-            y: event.clientY,
-            size: Math.random() * 3 + 1,
-            alpha: 1,
-            speedX: (Math.random() - 0.5) * 1.4,
-            speedY: (Math.random() - 0.5) * 1.4
-        });
-    }
-});
-
-function drawCursorParticles() {
-    for (let i = 0; i < cursorParticles.length; i++) {
-        const p = cursorParticles[i];
-
-        ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        p.x += p.speedX;
-        p.y += p.speedY;
-        p.alpha -= 0.02;
-
-        if (p.alpha <= 0) {
-            cursorParticles.splice(i, 1);
-            i--;
+                p.y -= p.speed;
+                if (p.y < -10) {
+                    p.y = canvas.height + 10;
+                    p.x = Math.random() * canvas.width;
+                }
+            });
         }
-    }
-}
 
 
-// ----------- ANIMACIÓN GLOBAL -----------
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // ----------- PARTICULAS DEL CURSOR (rastro dorado) -----------
+        let cursorParticles = [];
 
-    drawBackgroundParticles();
-    drawCursorParticles();
+        window.addEventListener("mousemove", (event) => {
+            for (let i = 0; i < 4; i++) {
+                cursorParticles.push({
+                    x: event.clientX,
+                    y: event.clientY,
+                    size: Math.random() * 3 + 1,
+                    alpha: 1,
+                    speedX: (Math.random() - 0.5) * 1.4,
+                    speedY: (Math.random() - 0.5) * 1.4
+                });
+            }
+        });
 
-    requestAnimationFrame(animate);
-}
+        function drawCursorParticles() {
+            for (let i = 0; i < cursorParticles.length; i++) {
+                const p = cursorParticles[i];
 
-createBackgroundParticles();
-animate();
+                ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
 
-window.addEventListener("resize", () => {
-    resizeCanvas();
-    createBackgroundParticles();
-});
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.alpha -= 0.02;
 
-// Resize canvas function
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
+                if (p.alpha <= 0) {
+                    cursorParticles.splice(i, 1);
+                    i--;
+                }
+            }
+        }
 
-// Función para abrir PDF en visualización
-function abrirPDF(rutaPDF) {
-    const ventana = window.open(rutaPDF, '_blank');
-    if (!ventana) {
-        alert('No se pudo abrir el PDF. Por favor, intenta nuevamente.');
-    }
-}
-</script>
+
+        // ----------- ANIMACIÓN GLOBAL -----------
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawBackgroundParticles();
+            drawCursorParticles();
+
+            requestAnimationFrame(animate);
+        }
+
+        createBackgroundParticles();
+        animate();
+
+        window.addEventListener("resize", () => {
+            resizeCanvas();
+            createBackgroundParticles();
+        });
+
+        // Resize canvas function
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Función para abrir PDF en visualización
+        function abrirPDF(rutaPDF) {
+            const ventana = window.open(rutaPDF, '_blank');
+            if (!ventana) {
+                alert('No se pudo abrir el PDF. Por favor, intenta nuevamente.');
+            }
+        }
+    </script>
 
 
 
@@ -476,4 +556,5 @@ function abrirPDF(rutaPDF) {
     <script src="js/app.js"></script>
 
 </body>
+
 </html>
