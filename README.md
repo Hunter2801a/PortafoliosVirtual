@@ -175,6 +175,24 @@ Gracias a Tailwind (mobile-first):
 
 ---
 
+## Despliegue en Vercel
+
+Este portafolio se puede desplegar como sitio estatico desde la raiz del repositorio.
+
+Configuracion recomendada al importar el proyecto desde GitHub en Vercel:
+
+- **Framework Preset:** Other
+- **Root Directory:** `./`
+- **Build Command:** dejar vacio
+- **Output Directory:** dejar vacio
+- **Install Command:** dejar por defecto
+
+Vercel servira `index.html` desde la raiz y usara los assets locales en `assets/`, `css/`, `dist/` y `js/`.
+
+El archivo `vercel.json` activa URLs limpias y cache para archivos estaticos.
+
+---
+
 ##  Autor
 
 **Adrián Jiménez**  
