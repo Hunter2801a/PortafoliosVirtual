@@ -7,13 +7,16 @@ export default {
     extend: {
       colors: {
         gold: "#ffc430",
-        "gold-light": "#ffb700",
+        "gold-light": "#ffe29a",
         rose: "#fa7188",
-        dark: "#000000",
+        dark: "#050506",
+        panel: "#101014",
+        ink: "#f7f3e8",
+        muted: "#aaa395",
       },
       keyframes: {
         slideInUp: {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(34px) rotateX(4deg)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {

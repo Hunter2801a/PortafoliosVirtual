@@ -79,14 +79,13 @@
                 </p>
 
                 <a href="#contacto" class="scroll-animate opacity-0 btn-primary">Conectemos</a>
-                <button onclick="descargarCV()" class="scroll-animate opacity-0 btn-primary"
-                    style="border-color: var(--color-gold);">Descargar CV</button>
+                <button onclick="descargarCV()" class="scroll-animate opacity-0 btn-primary btn-secondary">Descargar
+                    CV</button>
             </div>
 
             <div class="flex-1 scroll-animate opacity-0">
                 <img src="assets/newPerfil.png" alt="Adrián Jiménez"
-                    class="rounded-lg w-full max-w-xs mx-auto shadow-2xl"
-                    style="box-shadow: 0 0 30px rgba(255, 196, 48, 0.3);">
+                    class="hero-portrait rounded-lg w-full max-w-xs mx-auto shadow-2xl">
             </div>
         </section>
 
@@ -285,7 +284,7 @@
                         <div
                             class="tech-item scroll-animate opacity-0 hover:scale-110 hover:-translate-y-1 transition-all duration-300">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                                alt="GitHub" style="filter: invert(1);"><span>GitHub</span>
+                                alt="GitHub" class="github-icon"><span>GitHub</span>
                         </div>
 
                         <div
@@ -316,7 +315,7 @@
             <div class="grid md:grid-cols-2 gap-8">
 
                 <!-- Stash IMS -->
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                <div class="project-card scroll-animate opacity-0 overflow-hidden h-full">
                     <img src="assets/Stash.png" alt="Stash IMS" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Stash IMS</h3>
@@ -324,13 +323,13 @@
                             inventario en tiempo real con Stash IMS.</p>
                         <a href="https://stash-ims-landing.vercel.app/" target="_blank" class="btn-primary">Visitar
                             página web</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                        <button disabled class="btn-primary btn-disabled">Ver carta de
                             recomendación</button>
                     </div>
                 </div>
 
                 <!-- PGT Logistics -->
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                <div class="project-card scroll-animate opacity-0 overflow-hidden h-full">
                     <img src="assets/PGTLogistics.png" alt="PGTLogistics" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">PGT Logistics</h3>
@@ -344,7 +343,7 @@
                 </div>
 
                 <!-- Warelogic Solutions -->
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                <div class="project-card scroll-animate opacity-0 overflow-hidden h-full">
                     <img src="assets/warelogics.png" alt="Warelogic Solutions" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Warelogic Solutions</h3>
@@ -352,38 +351,23 @@
                             y almacenes.</p>
                         <a href="https://warelogicsolutions.com/" target="_blank" class="btn-primary">Visitar página
                             web</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                        <button disabled class="btn-primary btn-disabled">Ver carta de
                             recomendación</button>
                     </div>
                 </div>
 
                 <!-- Pulse Studio -->
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
+                <div class="project-card scroll-animate opacity-0 overflow-hidden h-full">
                     <img src="assets/PulseStudio.png" alt="Pulse Studio" class="w-full h-40 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gold">Pulse Studio</h3>
                         <p class="text-gray-400 mb-4">Consultoría & corporación de desarrolladores en formación.</p>
                         <a href="https://www.pulsestudio.dev/" target="_blank" class="btn-primary">Visitar página
                             web</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
+                        <button disabled class="btn-primary btn-disabled">Ver carta de
                             recomendación</button>
                     </div>
                 </div>
-
-                <!-- Digital E-Commerce -->
-                <div class="project-card scroll-animate opacity-0 hover:animate-card-hover overflow-hidden h-full">
-                    <img src="assets/CodeCorp.png" alt="CodeCorp" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gold">Digital E-Commerce</h3>
-                        <p class="text-gray-400 mb-4">Proyecto colaborativo de e-commerce desarrollado junto a un equipo
-                            profesional.</p>
-                        <a href="https://github.com/Hunter2801a/DS7-Final.git" target="_blank" class="btn-primary">Ver
-                            repositorio</a>
-                        <button disabled class="btn-primary" style="opacity: 0.5; cursor: not-allowed;">Ver carta de
-                            recomendación</button>
-                    </div>
-                </div>
-
             </div>
 
             <div class="mt-12 text-center scroll-animate opacity-0">
@@ -448,117 +432,10 @@
     <footer class="scroll-animate opacity-0 text-center py-6 bg-black border-t border-gold relative z-20">
         <p class="text-gray-400">© 2026 Adrián Jiménez. Todos los derechos reservados... o algo así</p>
     </footer>
-
-    <script>
-        const canvas = document.getElementById("particles-bg");
-        const ctx = canvas.getContext("2d");
-
-        resizeCanvas();
-
-        // ----------- PARTICULAS DEL FONDO (que suben) -----------
-        let bgParticles = [];
-        const backgroundCount = 60;
-
-        function createBackgroundParticles() {
-            bgParticles = [];
-            for (let i = 0; i < backgroundCount; i++) {
-                bgParticles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    size: Math.random() * 2 + 1,
-                    speed: Math.random() * 0.4 + 0.1,
-                    alpha: Math.random() * 0.4 + 0.2
-                });
-            }
-        }
-
-        function drawBackgroundParticles() {
-            bgParticles.forEach(p => {
-                ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                p.y -= p.speed;
-                if (p.y < -10) {
-                    p.y = canvas.height + 10;
-                    p.x = Math.random() * canvas.width;
-                }
-            });
-        }
-
-
-        // ----------- PARTICULAS DEL CURSOR (rastro dorado) -----------
-        let cursorParticles = [];
-
-        window.addEventListener("mousemove", (event) => {
-            for (let i = 0; i < 4; i++) {
-                cursorParticles.push({
-                    x: event.clientX,
-                    y: event.clientY,
-                    size: Math.random() * 3 + 1,
-                    alpha: 1,
-                    speedX: (Math.random() - 0.5) * 1.4,
-                    speedY: (Math.random() - 0.5) * 1.4
-                });
-            }
-        });
-
-        function drawCursorParticles() {
-            for (let i = 0; i < cursorParticles.length; i++) {
-                const p = cursorParticles[i];
-
-                ctx.fillStyle = `rgba(255, 196, 48, ${p.alpha})`;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                p.x += p.speedX;
-                p.y += p.speedY;
-                p.alpha -= 0.02;
-
-                if (p.alpha <= 0) {
-                    cursorParticles.splice(i, 1);
-                    i--;
-                }
-            }
-        }
-
-
-        // ----------- ANIMACIÓN GLOBAL -----------
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            drawBackgroundParticles();
-            drawCursorParticles();
-
-            requestAnimationFrame(animate);
-        }
-
-        createBackgroundParticles();
-        animate();
-
-        window.addEventListener("resize", () => {
-            resizeCanvas();
-            createBackgroundParticles();
-        });
-
-        // Resize canvas function
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        // Función para abrir PDF en visualización
-        function abrirPDF(rutaPDF) {
-            const ventana = window.open(rutaPDF, '_blank');
-            if (!ventana) {
-                alert('No se pudo abrir el PDF. Por favor, intenta nuevamente.');
-            }
-        }
-    </script>
-
-
+    <!-- Motion -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="js/animations.js"></script>
 
     <!-- JS -->
     <script src="js/app.js"></script>
